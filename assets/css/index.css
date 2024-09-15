@@ -65,6 +65,42 @@ main {
     gap: 30px;
 }
 
+main #pergunta-2 {
+    display: none;
+}
+
+main #pergunta-3 {
+    display: none;
+}
+
+main #pergunta-4 {
+    display: none;
+}
+
+main #pergunta-5 {
+    display: none
+}
+
+main #pergunta-6 {
+    display: none
+}
+
+main #pergunta-7 {
+    display: none
+}
+
+main #pergunta-8 {
+    display: none
+}
+
+main #pergunta-9 {
+    display: none
+}
+
+main #pergunta-10 {
+    display: none
+}
+
 main .pergunta {
     font-weight: bold;
     background-color: darkgray;
