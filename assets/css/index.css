@@ -5,6 +5,7 @@
 }
 
 body {
+    position: relative;
     height: 100vh;
     width: 100vw;
     background-color: white;
@@ -56,31 +57,10 @@ main {
     background-color: transparent;
 }
 
-main .pergunta {
-    font-weight: bold;
-    background-color: darkgray;
-    width: 600px;
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 30px;
-    font-size: 20px
-}
-
-main ul {
-    width: 650px;
-    height: 40vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
-.quiz {
+.sections {
     position: relative;
     flex-direction: column;
-    background-color: transparent;
+    background-color: blue;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -88,14 +68,84 @@ main ul {
     width: 50%;
 }
 
-.resposta {
-    list-style: none;
+#tela-inicio .conteudo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: cadetblue;
 }
 
-.quiz section {
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+    width: 25vw;
+    margin-bottom: 30px;
+    background-color: blueviolet;
+}
+
+.btn-comecar {
+    background-color: beige;
+}
+
+.btn-comecar button {
+    height: 10vh;
+    width: 25vw;
+}
+
+#tela-inicio {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    transition: display 0.5s ease;
+}
+
+#regras,
+#placar {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: navy;
+}
+
+.titulo-pergunta {
+    font-weight: bold;
+    background-color: darkgray;
+    width: 90%;
+    height: 35%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    font-size: 20px
+}
+
+.ocultar-section {
+    display: none;
+}
+
+.mostrar-section {
+    display: flex;
+}
+
+main ul {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 650px;
+    height: 40vh;
+    justify-content: space-evenly;
+}
+
+.resposta {
+    list-style: none;
 }
 
 .resposta button {
@@ -105,45 +155,17 @@ main ul {
     border-radius: 10px;
     cursor: pointer;
     border: 3px solid black;
-
 }
 
-#pergunta-1 {
+.ocultar {
+    display: none;
+}
+
+.mostrar {
     display: flex;
-}
-
-#pergunta-2 {
-    display: none;
-}
-
-#pergunta-3 {
-    display: none;
-}
-
-#pergunta-4 {
-    display: none;
-}
-
-#pergunta-5 {
-    display: none;
-}
-
-#pergunta-6 {
-    display: none;
-}
-
-#pergunta-7 {
-    display: none;
-}
-
-#pergunta-8 {
-    display: none;
-}
-
-#pergunta-9 {
-    display: none;
-}
-
-#pergunta-10 {
-    display: none;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: pink;
 }
