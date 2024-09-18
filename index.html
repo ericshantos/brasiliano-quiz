@@ -8,7 +8,6 @@
         <meta name="description" content="Projeto de entrega do módulo 1 da formação Full Stack em desenvolvimento web da PdA">
         <meta name="author" content="Eric dos Santos">
         <meta name="author" content="Jhulyane de Oliveira Silva">
-        <meta name="author" content="Mickael Bomfim">
         <meta name="author" content="Andrei Santos Moreira">
         <meta name="author" content="Matheus de Sá Aguiar">
 
@@ -19,8 +18,137 @@
         <link rel="stylesheet" href="assets/css/index.css">
 
         <!-- Links de javaScript -->
-        <script src="assets/js/scripts.js" defer></script>
+        <script type="module" src="assets/js/scripts.js" defer></script>
+        <script type="module" src="assets/js/contagemPontuacao.js" defer></script>
+        <script type="module" src="assets/js/adicionarPerguntas.js" defer></script>
+        <script src="assets/js/mudarSection.js" defer></script>
     </head>
     <body>
+        <!--Tela de start-->
+        <section id="tela-inicio" class="sections ocultar-section">
+            <div class="conteudo">
+                <div class="logo">
+                    LOGO
+                </div>
+                <div class="btn-comecar">
+                    <button onclick="mostrarSection('regras')">Start</button>
+                </div>
+            </div>
+        </section>
+        <header>
+            <nav>
+                <ul id="lista-nav">
+                    <li onclick="mostrarSection('quiz')"><a href="#">jogar</a></li>
+                    <li onclick="mostrarSection('regras')"><a href="#">Regras</a></li>
+                    <li onclick="mostrarSection('placar')"><a href="#">Placar</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <!--Tela de regras-->
+            <section id="regras" class="sections ocultar-section">
+                <h1>
+                    Painel de regras
+                </h1>
+            </section>
+            <!--Quiz-->
+            <section id="quiz" class="sections ocultar-section mostrar-section">
+                <section class="ocultar mostrar" id="pergunta-1">
+                    <p class="titulo-pergunta"> Proin sem nisi, ultrices vel vulputate ut?</p>
+                    <ul>
+                        <li class="resposta"><button class="alternativa-a">Nunc eu risus sagittis</button></li>
+                        <li class="resposta"><button class="alternativa-b"> Dignissim nisl</button></li>
+                        <li class="resposta"><button class="alternativa-c">Praesent quis feugiat</button></li>
+                        <li class="resposta"><button class="alternativa-d">vitae sollicitudin lectus</button></li>
+                    </ul>
+                </section>
+                <section class="ocultar" id="pergunta-2">
+                    <p class="titulo-pergunta"> Proin sem nisi, ultrices vel vulputate ut?</p>
+                    <ul>
+                        <li class="resposta"><button class="alternativa-a">Nunc eu risus sagittis</button></li>
+                        <li class="resposta"><button class="alternativa-b"> Dignissim nisl</button></li>
+                        <li class="resposta"><button class="alternativa-c">Praesent quis feugiat</button></li>
+                        <li class="resposta"><button class="alternativa-d">vitae sollicitudin lectus</button></li>
+                    </ul>
+                </section>
+                <section class="ocultar" id="pergunta-3">
+                    <p class="titulo-pergunta"> Proin sem nisi, ultrices vel vulputate ut?</p>
+                    <ul>
+                        <li class="resposta"><button class="alternativa-a">Nunc eu risus sagittis</button></li>
+                        <li class="resposta"><button class="alternativa-b"> Dignissim nisl</button></li>
+                        <li class="resposta"><button class="alternativa-c">Praesent quis feugiat</button></li>
+                        <li class="resposta"><button class="alternativa-d">vitae sollicitudin lectus</button></li>
+                    </ul>
+                </section>
+                <section class="ocultar" id="pergunta-4">
+                    <p class="titulo-pergunta"> Proin sem nisi, ultrices vel vulputate ut?</p>
+                    <ul>
+                        <li class="resposta"><button class="alternativa-a">Nunc eu risus sagittis</button></li>
+                        <li class="resposta"><button class="alternativa-b"> Dignissim nisl</button></li>
+                        <li class="resposta"><button class="alternativa-c">Praesent quis feugiat</button></li>
+                        <li class="resposta"><button class="alternativa-d">vitae sollicitudin lectus</button></li>
+                    </ul>
+                </section>
+                <section class="ocultar" id="pergunta-5">
+                    <p class="titulo-pergunta"> Proin sem nisi, ultrices vel vulputate ut?</p>
+                    <ul>
+                        <li class="resposta"><button class="alternativa-a">Nunc eu risus sagittis</button></li>
+                        <li class="resposta"><button class="alternativa-b"> Dignissim nisl</button></li>
+                        <li class="resposta"><button class="alternativa-c">Praesent quis feugiat</button></li>
+                        <li class="resposta"><button class="alternativa-d">vitae sollicitudin lectus</button></li>
+                    </ul>
+                </section>
+                <section class="ocultar" id="pergunta-6">
+                    <p class="titulo-pergunta"> Proin sem nisi, ultrices vel vulputate ut?</p>
+                    <ul>
+                        <li class="resposta"><button class="alternativa-a">Nunc eu risus sagittis</button></li>
+                        <li class="resposta"><button class="alternativa-b"> Dignissim nisl</button></li>
+                        <li class="resposta"><button class="alternativa-c">Praesent quis feugiat</button></li>
+                        <li class="resposta"><button class="alternativa-d">vitae sollicitudin lectus</button></li>
+                    </ul>
+                </section>
+                <section class="ocultar" id="pergunta-7">
+                    <p class="titulo-pergunta"> Proin sem nisi, ultrices vel vulputate ut?</p>
+                    <ul>
+                        <li class="resposta"><button class="alternativa-a">Nunc eu risus sagittis</button></li>
+                        <li class="resposta"><button class="alternativa-b"> Dignissim nisl</button></li>
+                        <li class="resposta"><button class="alternativa-c">Praesent quis feugiat</button></li>
+                        <li class="resposta"><button class="alternativa-d">vitae sollicitudin lectus</button></li>
+                    </ul>
+                </section>
+                <section class="ocultar" id="pergunta-8">
+                    <p class="titulo-pergunta"> Proin sem nisi, ultrices vel vulputate ut?</p>
+                    <ul>
+                        <li class="resposta"><button class="alternativa-a">Nunc eu risus sagittis</button></li>
+                        <li class="resposta"><button class="alternativa-b"> Dignissim nisl</button></li>
+                        <li class="resposta"><button class="alternativa-c">Praesent quis feugiat</button></li>
+                        <li class="resposta"><button class="alternativa-d">vitae sollicitudin lectus</button></li>
+                    </ul>
+                </section>
+                <section class="ocultar" id="pergunta-9">
+                    <p class="titulo-pergunta"> Proin sem nisi, ultrices vel vulputate ut?</p>
+                    <ul>
+                        <li class="resposta"><button class="alternativa-a">Nunc eu risus sagittis</button></li>
+                        <li class="resposta"><button class="alternativa-b"> Dignissim nisl</button></li>
+                        <li class="resposta"><button class="alternativa-c">Praesent quis feugiat</button></li>
+                        <li class="resposta"><button class="alternativa-d">vitae sollicitudin lectus</button></li>
+                    </ul>
+                </section>
+                <section class="ocultar" id="pergunta-10">
+                    <p class="titulo-pergunta">Qual é a capital do Brasil?</p>
+                    <ul>
+                        <li class="resposta"><button class="alternativa-a">Nunc eu risus sagittis</button></li>
+                        <li class="resposta"><button class="alternativa-b"> Dignissim nisl</button></li>
+                        <li class="resposta"><button class="alternativa-c">Praesent quis feugiat</button></li>
+                        <li class="resposta"><button class="alternativa-d">vitae sollicitudin lectus</button></li>
+                    </ul>
+                </section>         
+            </section>
+            <section id="placar" class="sections ocultar-section">
+                <h1>
+                    Placar
+                </h1>
+            </section>
+        </main>
     </body>
 </html>

@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+}
+
+header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 25%;
+    width: 100%;
+    background-color: rgb(228, 228, 226);
+}
+
+header nav {
+    position: absolute;
+    display: flex;
+    height: 40%;
+    width: 100%;
+    background-color: darkgray;
+    bottom: 0;
+}
+
+#lista-nav {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    list-style-type: none;
+    margin-right: 30px;
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+    gap: 120px;
+}
+
+#lista-nav li a {
+    text-decoration: none;
+    color: white;
+}
+
+main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    height: 75%;
+    background-color: transparent;
+}
+
+.sections {
+    position: relative;
+    flex-direction: column;
+    background-color: blue;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 75%;
+    width: 50%;
+}
+
+#tela-inicio .conteudo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: cadetblue;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+    width: 25vw;
+    margin-bottom: 30px;
+    background-color: blueviolet;
+}
+
+.btn-comecar {
+    background-color: beige;
+}
+
+.btn-comecar button {
+    height: 10vh;
+    width: 25vw;
+}
+
+#tela-inicio {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    transition: display 0.5s ease;
+}
+
+#regras,
+#placar {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: navy;
+}
+
+.titulo-pergunta {
+    font-weight: bold;
+    background-color: darkgray;
+    width: 90%;
+    height: 35%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    font-size: 20px
+}
+
+.ocultar-section {
+    display: none;
+}
+
+.mostrar-section {
+    display: flex;
+}
+
+main ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 650px;
+    height: 40vh;
+    justify-content: space-evenly;
+}
+
+.resposta {
+    list-style: none;
+}
+
+.resposta button {
+    background-color: rgb(228, 228, 226);
+    width: 500px;
+    height: 6vh;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 3px solid black;
+}
+
+.ocultar {
+    display: none;
+}
+
+.mostrar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: pink;
+}

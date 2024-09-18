@@ -13,3 +13,5 @@
 - desenvolvedor(a): [Jhulyanne](https://github.com/jhulyanne)
 - desenvolvedor(a): [Matheus]()
 - desenvolvedor(a): [Mickael]()
+
+- [Figma](https://www.figma.com/design/5cDCS3Zo4FwTGepbFFiro3/Untitled?node-id=0-1&node-type=canvas&t=VVrsnNxBXZGOw43X-0)
