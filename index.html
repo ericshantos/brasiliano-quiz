@@ -26,10 +26,20 @@
         <script src="assets/js/transicao/mudarSection.js" defer></script>
     </head>
     <body>
-        <header>
-            <div class="logo">
-                <img src="assets/imgs/logo-preta.svg" alt="logo na cor preta">
+        
+        <!--Tela de start-->
+        <section id="tela-inicio" class="sections ocultar mostrar">
+            <div class="conteudo">
+                <div class="logo">
+                    <img src="assets/imgs/logo-preta.svg" alt="logo na cor preta">
+                </div>
+                <div class="btn-comecar">
+                    <button onclick="mostrarSection('regras')">Start</button>
+                </div>
+                
             </div>
+        </section>
+        <header>
             <nav>
                 <ul id="lista-nav">
                     <li onclick="mostrarSection('regras')"><a href="#">Regras</a></li>
@@ -37,38 +47,18 @@
                 </ul>
             </nav>
         </header>
-
-        <!--Tela de start-->
-        <section id="tela-inicio" class="sections ocultar mostrar">
-            <div class="conteudo">
-                <div class="logo">
-                    <img src="assets/imgs/" alt="imagem ilustrativa">
-                </div>
-                <div class="btn-comecar">
-                    <button onclick="mostrarSection('regras')">Start</button>
-                </div>
-            </div>
-        </section>
         <main>
             <!--Tela de regras-->
-            <section id="regras" class="sections ocultar-section">
-                <h1>Painel de regras</h1>
-                <a href="https://youtube.com/watch?v=ia1W0vR3xEE">Curioso com o nome do quiz?</a>
-                <ul>
-                    <li>O quiz é composto por 10 fases. Em cada fase, uma pergunta;</li>
-                    <li>Cada pergunta com 4 alternativas, onde apenas 1 é a correta;</li>
-                    <li>Quando você acerta, você passa de fase;</li>
-                    <li>Mas se você erra, você volta para a primeira fase;</li>
-                    <li>Você poderá checar sua posição no placar após completar as 10 fases.</li>
-                </ul>
-
-                <div id="btn-iniciar-quiz">
-                    <button class="btn-iniciar-quiz" onclick="mostrarSection('quiz')">
-                        começar
-                    </button>
-                </div>
+            <section id="regras" class="sections ocultar">
+                <h1>
+                    Painel de regras
+                    <div id="btn-iniciar-quiz">
+                        <button class="btn-iniciar-quiz" onclick="mostrarSection('quiz')">
+                            começar
+                        </button>
+                    </div>
+                </h1>
             </section>
-
             <!--Quiz-->
             <section id="quiz" class="sections ocultar">
                 <section class="ocultar" id="reiniciar-jogo">
@@ -176,11 +166,10 @@
                 </h1>
             </section>
         </main>
-        
-        <footer>
+    </body>
+    <footer>
         <div class="logo">
             <img src="assets/imgs/logo-branca.svg" alt="logo na cor branca">
         </div>
     </footer>
-    </body>
 </html>
