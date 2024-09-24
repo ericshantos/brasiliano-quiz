@@ -24,28 +24,30 @@
         <script src="assets/js/mudarSection.js" defer></script>
     </head>
     <body>
-        
-        <!--Tela de start-->
-        <section id="tela-inicio" class="sections ocultar-section">
-            <div class="conteudo">
-                <div class="logo">
-                    <img src="assets/imgs/logo-preta.svg" alt="logo na cor preta">
-                </div>
-                <div class="btn-comecar">
-                    <button onclick="mostrarSection('regras')">Start</button>
-                </div>
-                
-            </div>
-        </section>
         <header>
+            <div class="logo">
+                <img src="assets/imgs/logo-preta.svg" alt="logo na cor preta">
+            </div>
             <nav>
                 <ul id="lista-nav">
-                    <li onclick="mostrarSection('quiz')"><a href="#">jogar</a></li>
                     <li onclick="mostrarSection('regras')"><a href="#">Regras</a></li>
                     <li onclick="mostrarSection('placar')"><a href="#">Placar</a></li>
                 </ul>
             </nav>
         </header>
+
+        <!--Tela de start-->
+        <section id="tela-inicio" class="sections ocultar-section">
+            <div class="conteudo">
+                <div class="logo">
+                    <img src="assets/imgs/" alt="imagem ilustrativa">
+                </div>
+                <div class="btn-comecar">
+                    <button onclick="mostrarSection('regras')">Start</button>
+                </div>
+            </div>
+        </section>
+        
         <main>
             <!--Tela de regras-->
             <section id="regras" class="sections ocultar-section">
@@ -58,7 +60,14 @@
                     <li>Mas se você erra, você volta para a primeira fase;</li>
                     <li>Você poderá checar sua posição no placar após completar as 10 fases.</li>
                 </ul>
+
+                <div id="btn-iniciar-quiz">
+                    <button class="btn-iniciar-quiz" onclick="mostrarSection('quiz')">
+                        começar
+                    </button>
+                </div>
             </section>
+
             <!--Quiz-->
             <section id="quiz" class="sections ocultar-section mostrar-section">
                 <section class="ocultar mostrar" id="pergunta-1">
@@ -158,10 +167,11 @@
                 </h1>
             </section>
         </main>
-    </body>
-    <footer>
+        
+        <footer>
         <div class="logo">
             <img src="assets/imgs/logo-branca.svg" alt="logo na cor branca">
         </div>
     </footer>
+    </body>
 </html>
