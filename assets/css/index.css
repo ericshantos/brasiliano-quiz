@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -7,27 +9,34 @@
 body {
     position: relative;
     height: 100vh;
-    width: 100vw;
+    width: auto;
     background-color: white;
 }
 
+
 header {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    height: 25%;
-    width: 100%;
-    background-color: rgb(228, 228, 226);
+    background-color:  #D5ED9F;
+
+    .logo {
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            height: 3.8rem;
+            width: auto;
+        }
+    }
+
+    nav {
+        padding: 0.5rem;
+        background-color: #00712D;
+        font-family: "Lato", sans-serif;
+        font-weight: 400;
+    }
 }
 
-header nav {
-    position: absolute;
-    display: flex;
-    height: 40%;
-    width: 100%;
-    background-color: darkgray;
-    bottom: 0;
-}
 
 #lista-nav {
     display: flex;
@@ -35,15 +44,16 @@ header nav {
     align-items: center;
     list-style-type: none;
     margin-right: 30px;
-    background-color: transparent;
-    height: 100%;
-    width: 100%;
     gap: 120px;
-}
 
-#lista-nav li a {
-    text-decoration: none;
-    color: white;
+    li a {
+        text-decoration: none;
+        color: #D5ED9F
+    }
+
+    li:hover {
+        font-weight: 900;
+    }
 }
 
 main {
@@ -77,17 +87,7 @@ main {
     height: 100%;
     width: 100%;
     background-color: cadetblue;
-}
-
-.logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 30vh;
-    width: 25vw;
-    margin-bottom: 30px;
-    background-color: blueviolet;
-}
+} 
 
 .btn-comecar {
     background-color: beige;
@@ -172,17 +172,33 @@ main ul {
 
 #reiniciar-jogo {
     justify-content: center;
-}
+} 
 
 #reiniciar-jogo #btn-recomecar {
     position: absolute;
     bottom: 25%;
     height: 10%;
     width: 30%;
-}
+} 
 
 #reiniciar-jogo .btn-recomecar {
     position: relative;
     height: 100%;
     width: 100%;
+} 
+
+footer {
+    background-color: #00712D;
+
+    .logo {
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+
+        img {
+            height: 3.8rem;
+            width: auto;
+        }
+    }
 }
