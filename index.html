@@ -18,10 +18,12 @@
         <link rel="stylesheet" href="assets/css/index.css">
 
         <!-- Links de javaScript -->
-        <script type="module" src="assets/js/scripts.js" defer></script>
-        <script type="module" src="assets/js/contagemPontuacao.js" defer></script>
-        <script type="module" src="assets/js/adicionarPerguntas.js" defer></script>
-        <script src="assets/js/mudarSection.js" defer></script>
+        <script src="assets/js/scripts.js" defer></script>
+        <script type="module" src="assets/js/contagemPontuacao/cronometro.js" defer></script>
+        <script type="module" src="assets/js/contagemPontuacao/calcularPontuacao.js"></script>
+        <script type="module" src="assets/js/pergunta/adicionarPerguntas.js" defer></script>
+        <script type="module" src="assets/js/transicao/respostaErrada.js"></script>
+        <script src="assets/js/transicao/mudarSection.js" defer></script>
     </head>
     <body>
         <header>
@@ -37,7 +39,7 @@
         </header>
 
         <!--Tela de start-->
-        <section id="tela-inicio" class="sections ocultar-section">
+        <section id="tela-inicio" class="sections ocultar mostrar">
             <div class="conteudo">
                 <div class="logo">
                     <img src="assets/imgs/" alt="imagem ilustrativa">
@@ -47,7 +49,6 @@
                 </div>
             </div>
         </section>
-        
         <main>
             <!--Tela de regras-->
             <section id="regras" class="sections ocultar-section">
@@ -69,99 +70,107 @@
             </section>
 
             <!--Quiz-->
-            <section id="quiz" class="sections ocultar-section mostrar-section">
-                <section class="ocultar mostrar" id="pergunta-1">
+            <section id="quiz" class="sections ocultar">
+                <section class="ocultar" id="reiniciar-jogo">
+                    <h2>
+                        Poxa, não foi dessa vez :(
+                    </h2>
+                    <div id="btn-recomecar">
+                        <button class="btn-recomecar">Bora tentar denovo!!!</button>
+                    </div>
+                </section>
+                <section class="pergunta" id="pergunta-1">
                     <p class="titulo-pergunta"> Proin sem nisi, ultrices vel vulputate ut?</p>
                     <ul>
-                        <li class="resposta"><button class="alternativa-a">Nunc eu risus sagittis</button></li>
-                        <li class="resposta"><button class="alternativa-b"> Dignissim nisl</button></li>
-                        <li class="resposta"><button class="alternativa-c">Praesent quis feugiat</button></li>
-                        <li class="resposta"><button class="alternativa-d">vitae sollicitudin lectus</button></li>
+                        <li class="resposta"><button class="alternativa-a alternativa">Nunc eu risus sagittis</button></li>
+                        <li class="resposta"><button class="alternativa-b alternativa"> Dignissim nisl</button></li>
+                        <li class="resposta"><button class="alternativa-c alternativa">Praesent quis feugiat</button></li>
+                        <li class="resposta"><button class="alternativa-d alternativa">vitae sollicitudin lectus</button></li>
                     </ul>
                 </section>
-                <section class="ocultar" id="pergunta-2">
+                <section class="ocultar pergunta" id="pergunta-2">
                     <p class="titulo-pergunta"> Proin sem nisi, ultrices vel vulputate ut?</p>
                     <ul>
-                        <li class="resposta"><button class="alternativa-a">Nunc eu risus sagittis</button></li>
-                        <li class="resposta"><button class="alternativa-b"> Dignissim nisl</button></li>
-                        <li class="resposta"><button class="alternativa-c">Praesent quis feugiat</button></li>
-                        <li class="resposta"><button class="alternativa-d">vitae sollicitudin lectus</button></li>
+                        <li class="resposta"><button class="alternativa-a alternativa">Nunc eu risus sagittis</button></li>
+                        <li class="resposta"><button class="alternativa-b alternativa"> Dignissim nisl</button></li>
+                        <li class="resposta"><button class="alternativa-c alternativa">Praesent quis feugiat</button></li>
+                        <li class="resposta"><button class="alternativa-d alternativa">vitae sollicitudin lectus</button></li>
                     </ul>
                 </section>
-                <section class="ocultar" id="pergunta-3">
+                <section class="ocultar pergunta" id="pergunta-3">
                     <p class="titulo-pergunta"> Proin sem nisi, ultrices vel vulputate ut?</p>
                     <ul>
-                        <li class="resposta"><button class="alternativa-a">Nunc eu risus sagittis</button></li>
-                        <li class="resposta"><button class="alternativa-b"> Dignissim nisl</button></li>
-                        <li class="resposta"><button class="alternativa-c">Praesent quis feugiat</button></li>
-                        <li class="resposta"><button class="alternativa-d">vitae sollicitudin lectus</button></li>
+                        <li class="resposta"><button class="alternativa-a alternativa">Nunc eu risus sagittis</button></li>
+                        <li class="resposta"><button class="alternativa-b alternativa"> Dignissim nisl</button></li>
+                        <li class="resposta"><button class="alternativa-c alternativa">Praesent quis feugiat</button></li>
+                        <li class="resposta"><button class="alternativa-d alternativa">vitae sollicitudin lectus</button></li>
                     </ul>
                 </section>
-                <section class="ocultar" id="pergunta-4">
+                <section class="ocultar pergunta" id="pergunta-4">
                     <p class="titulo-pergunta"> Proin sem nisi, ultrices vel vulputate ut?</p>
                     <ul>
-                        <li class="resposta"><button class="alternativa-a">Nunc eu risus sagittis</button></li>
-                        <li class="resposta"><button class="alternativa-b"> Dignissim nisl</button></li>
-                        <li class="resposta"><button class="alternativa-c">Praesent quis feugiat</button></li>
-                        <li class="resposta"><button class="alternativa-d">vitae sollicitudin lectus</button></li>
+                        <li class="resposta"><button class="alternativa-a alternativa">Nunc eu risus sagittis</button></li>
+                        <li class="resposta"><button class="alternativa-b alternativa"> Dignissim nisl</button></li>
+                        <li class="resposta"><button class="alternativa-c alternativa">Praesent quis feugiat</button></li>
+                        <li class="resposta"><button class="alternativa-d alternativa">vitae sollicitudin lectus</button></li>
                     </ul>
                 </section>
-                <section class="ocultar" id="pergunta-5">
+                <section class="ocultar pergunta" id="pergunta-5">
                     <p class="titulo-pergunta"> Proin sem nisi, ultrices vel vulputate ut?</p>
                     <ul>
-                        <li class="resposta"><button class="alternativa-a">Nunc eu risus sagittis</button></li>
-                        <li class="resposta"><button class="alternativa-b"> Dignissim nisl</button></li>
-                        <li class="resposta"><button class="alternativa-c">Praesent quis feugiat</button></li>
-                        <li class="resposta"><button class="alternativa-d">vitae sollicitudin lectus</button></li>
+                        <li class="resposta"><button class="alternativa-a alternativa">Nunc eu risus sagittis</button></li>
+                        <li class="resposta"><button class="alternativa-b alternativa"> Dignissim nisl</button></li>
+                        <li class="resposta"><button class="alternativa-c alternativa">Praesent quis feugiat</button></li>
+                        <li class="resposta"><button class="alternativa-d alternativa">vitae sollicitudin lectus</button></li>
                     </ul>
                 </section>
-                <section class="ocultar" id="pergunta-6">
+                <section class="ocultar pergunta" id="pergunta-6">
                     <p class="titulo-pergunta"> Proin sem nisi, ultrices vel vulputate ut?</p>
                     <ul>
-                        <li class="resposta"><button class="alternativa-a">Nunc eu risus sagittis</button></li>
-                        <li class="resposta"><button class="alternativa-b"> Dignissim nisl</button></li>
-                        <li class="resposta"><button class="alternativa-c">Praesent quis feugiat</button></li>
-                        <li class="resposta"><button class="alternativa-d">vitae sollicitudin lectus</button></li>
+                        <li class="resposta"><button class="alternativa-a alternativa">Nunc eu risus sagittis</button></li>
+                        <li class="resposta"><button class="alternativa-b alternativa"> Dignissim nisl</button></li>
+                        <li class="resposta"><button class="alternativa-c alternativa">Praesent quis feugiat</button></li>
+                        <li class="resposta"><button class="alternativa-d alternativa">vitae sollicitudin lectus</button></li>
                     </ul>
                 </section>
-                <section class="ocultar" id="pergunta-7">
+                <section class="ocultar pergunta" id="pergunta-7">
                     <p class="titulo-pergunta"> Proin sem nisi, ultrices vel vulputate ut?</p>
                     <ul>
-                        <li class="resposta"><button class="alternativa-a">Nunc eu risus sagittis</button></li>
-                        <li class="resposta"><button class="alternativa-b"> Dignissim nisl</button></li>
-                        <li class="resposta"><button class="alternativa-c">Praesent quis feugiat</button></li>
-                        <li class="resposta"><button class="alternativa-d">vitae sollicitudin lectus</button></li>
+                        <li class="resposta"><button class="alternativa-a alternativa">Nunc eu risus sagittis</button></li>
+                        <li class="resposta"><button class="alternativa-b alternativa"> Dignissim nisl</button></li>
+                        <li class="resposta"><button class="alternativa-c alternativa">Praesent quis feugiat</button></li>
+                        <li class="resposta"><button class="alternativa-d alternativa">vitae sollicitudin lectus</button></li>
                     </ul>
                 </section>
-                <section class="ocultar" id="pergunta-8">
+                <section class="ocultar pergunta" id="pergunta-8">
                     <p class="titulo-pergunta"> Proin sem nisi, ultrices vel vulputate ut?</p>
                     <ul>
-                        <li class="resposta"><button class="alternativa-a">Nunc eu risus sagittis</button></li>
-                        <li class="resposta"><button class="alternativa-b"> Dignissim nisl</button></li>
-                        <li class="resposta"><button class="alternativa-c">Praesent quis feugiat</button></li>
-                        <li class="resposta"><button class="alternativa-d">vitae sollicitudin lectus</button></li>
+                        <li class="resposta"><button class="alternativa-a alternativa">Nunc eu risus sagittis</button></li>
+                        <li class="resposta"><button class="alternativa-b alternativa"> Dignissim nisl</button></li>
+                        <li class="resposta"><button class="alternativa-c alternativa">Praesent quis feugiat</button></li>
+                        <li class="resposta"><button class="alternativa-d alternativa">vitae sollicitudin lectus</button></li>
                     </ul>
                 </section>
-                <section class="ocultar" id="pergunta-9">
+                <section class="ocultar pergunta" id="pergunta-9">
                     <p class="titulo-pergunta"> Proin sem nisi, ultrices vel vulputate ut?</p>
                     <ul>
-                        <li class="resposta"><button class="alternativa-a">Nunc eu risus sagittis</button></li>
-                        <li class="resposta"><button class="alternativa-b"> Dignissim nisl</button></li>
-                        <li class="resposta"><button class="alternativa-c">Praesent quis feugiat</button></li>
-                        <li class="resposta"><button class="alternativa-d">vitae sollicitudin lectus</button></li>
+                        <li class="resposta"><button class="alternativa-a alternativa">Nunc eu risus sagittis</button></li>
+                        <li class="resposta"><button class="alternativa-b alternativa"> Dignissim nisl</button></li>
+                        <li class="resposta"><button class="alternativa-c alternativa">Praesent quis feugiat</button></li>
+                        <li class="resposta"><button class="alternativa-d alternativa">vitae sollicitudin lectus</button></li>
                     </ul>
                 </section>
-                <section class="ocultar" id="pergunta-10">
+                <section class="ocultar pergunta" id="pergunta-10">
                     <p class="titulo-pergunta">Qual é a capital do Brasil?</p>
                     <ul>
-                        <li class="resposta"><button class="alternativa-a">Nunc eu risus sagittis</button></li>
-                        <li class="resposta"><button class="alternativa-b"> Dignissim nisl</button></li>
-                        <li class="resposta"><button class="alternativa-c">Praesent quis feugiat</button></li>
-                        <li class="resposta"><button class="alternativa-d">vitae sollicitudin lectus</button></li>
+                        <li class="resposta"><button class="alternativa-a alternativa">Nunc eu risus sagittis</button></li>
+                        <li class="resposta"><button class="alternativa-b alternativa"> Dignissim nisl</button></li>
+                        <li class="resposta"><button class="alternativa-c alternativa">Praesent quis feugiat</button></li>
+                        <li class="resposta"><button class="alternativa-d alternativa">vitae sollicitudin lectus</button></li>
                     </ul>
                 </section>         
             </section>
-            <section id="placar" class="sections ocultar-section">
+            <section id="placar" class="sections ocultar">
                 <h1>
                     Placar
                 </h1>
