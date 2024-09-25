@@ -49,11 +49,13 @@ header {
         color: #D5ED9F
     }
 
-    li:hover {
+    li a:hover {
         font-weight: 900;
-        
+        text-decoration: underline;
+        color: #023014;
     }
 }
+
 
 main {
     position: relative;
