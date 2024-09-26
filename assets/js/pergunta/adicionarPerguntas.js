@@ -37,9 +37,8 @@ function reiniciarQuiz() {
 
     // Redefine o estilo de fundo das alternativas
     alternativas.forEach(function(alternativa) {
-        alternativa.style.backgroundColor = 'gray';
+        alternativa.style.backgroundColor = '#FFE2BB';
     });
-
     // Oculta a tela de reinício e exibe a primeira pergunta
     document.getElementById('reiniciar-jogo').classList.add('ocultar');
     document.getElementById('pergunta-1').style.display = 'flex';
