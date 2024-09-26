@@ -186,3 +186,35 @@ main ul {
     height: 100%;
     width: 100%;
 }
+
+#tela-pontuação{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   justify-content: center;
+ }
+ 
+table {
+margin: 1px;
+}
+
+td {
+    background-color: #ffe2bb;
+}
+  
+th {
+    background-color: #ff9100;
+}
+
+.colocação { 
+    padding: 5px 10px;
+
+}
+
+.nome-usuario {
+    padding: 5px 80px
+}
+
+.pontuação-usuario {
+    padding: 5px 80px;
+}
