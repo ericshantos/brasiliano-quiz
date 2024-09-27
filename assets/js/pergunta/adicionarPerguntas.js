@@ -38,6 +38,20 @@ function reiniciarQuiz() {
     // Redefine o estilo de fundo das alternativas
     alternativas.forEach(function(alternativa) {
         alternativa.style.backgroundColor = '#FFE2BB';
+        
+    });
+
+    alternativas.forEach(function(alternativa) {
+        alternativa.addEventListener(
+            'mouseover',
+            function(event) {
+                event.target.style.backgroundColor = '#D5ED9F';
+                setTimeout(function() {
+                    event.target.style.backgroundColor = '';
+                }, 500);
+            },
+            false,
+        );
     });
     // Oculta a tela de reinício e exibe a primeira pergunta
     document.getElementById('reiniciar-jogo').classList.add('ocultar');

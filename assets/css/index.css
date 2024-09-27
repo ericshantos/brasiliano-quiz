@@ -59,7 +59,6 @@ main {
 .sections {
     position: relative;
     flex-direction: column;
-    background-color: blue;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -185,15 +184,25 @@ main ul {
     align-items: center;
     height: 100%;
     width: 100%;
-    background-color: pink;
 }
 
 #quiz #reiniciar-jogo {
-    height: 200px;
+    height: 23em;
     margin-top: 40px;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+}
+
+#quiz #reiniciar-jogo h2 {
+    color: #00712D;
+    display: flex;
+    align-items: center;
+    padding: 1em;
+    background-color: #D5ED9F;
+    height: 5em;
+    border-radius: 0.6em;
+    font-size: 30px;
 }
 
 #quiz #reiniciar-jogo button {
@@ -204,6 +213,7 @@ main ul {
     cursor: pointer;
     background-color: #FFE2BB;
     border:none;
+    margin-left: 5em;
 }
 
 #quiz #reiniciar-jogo button:hover {
