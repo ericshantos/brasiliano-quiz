@@ -44,6 +44,10 @@ body {
     width: 25vw;
 }
 
+.btn-comum {
+    cursor: pointer;
+}
+
 .btn-comecar button {
     position: relative;
     border: 2px solid black;
@@ -90,7 +94,7 @@ header nav {
     height: 40%;
     width: 100%;
     background-color: #fffbe6;
-    box-shadow: 10px 2px 20px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 10px 1px 20px 5px rgba(0, 0, 0, 0.2);
     bottom: 0;
 }
 
@@ -124,32 +128,30 @@ main {
 }
 
 .sections {
+    display: flex;
     position: relative;
     flex-direction: column;
     background-color: blue;
     justify-content: center;
     align-items: center;
-    display: flex;
-    height: 75%;
-    width: 50%;
 }
 
+#placar,
 #regras,
-#placar {
+#quiz {
     position: relative;
-    height: 100%;
-    width: 100%;
-    background-color: navy;
-}
-
-#regras {
     background-color: #00712d;
     border: 3px solid black;
     border-radius: 50px;
     align-items: flex-start;
-    padding-left: 5%;
     width: 90%;
     height: 90%;
+}
+
+#quiz {
+    height: 80%;
+    width: 60%;
+    align-items: center;
 }
 
 #regras-quiz {
@@ -189,18 +191,31 @@ main {
     transform: translateX(-5px) translateY(-5px);
 }
 
-
 .titulo-pergunta {
-    font-weight: bold;
-    background-color: darkgray;
-    width: 90%;
-    height: 35%;
-    margin-bottom: 20px;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    font-weight: bold;
+    border: 2px solid black;
     border-radius: 30px;
-    font-size: 20px
+    padding: 20px;
+    font-size: 20px;
+    width: 100%;
+    background-color: #ff9100;
+    transform: translateX(-5px) translateY(-5px);
+}
+
+.fundo-titulo-alternativa {
+    position: relative;
+    background-color: black;
+    border-radius: 30px;
+    margin: 10px 0 20px;
+    width: 90%;
+    height: auto;
+    transform: translateY(-10px);
+    top: 20px;
 }
 
 .ocultar {
@@ -222,15 +237,20 @@ main ul {
 
 .resposta {
     list-style: none;
+    background-color: black;
 }
 
-.resposta button {
-    background-color: rgb(228, 228, 226);
+.resposta .alternativa {
+    background-color: white;
     width: 500px;
     height: 6vh;
-    border-radius: 10px;
     cursor: pointer;
     border: 2px solid black;
+    transition: transform 0.1s ease;
+}
+
+.alternativa:hover {
+    transform: translateX(-5px) translateY(-5px);
 }
 
 #pergunta-1 {
@@ -241,26 +261,46 @@ main ul {
     position: relative;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    width: 90%;
     height: 100%;
-    width: 100%;
-    background-color: pink;
+    background-color: transparent;
 }
 
 #reiniciar-jogo {
-    justify-content: center;
-}
-
-#reiniciar-jogo #btn-recomecar {
-    position: absolute;
-    bottom: 25%;
-    height: 10%;
-    width: 30%;
-}
-
-#reiniciar-jogo .btn-recomecar {
     position: relative;
+    background-color: transparent;
+    justify-content: center;
+    align-items: center;
     height: 100%;
     width: 100%;
+}
+
+.conteudo-reiniciar {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    width: 50%;
+    transform: translateX(50%) translateY(50%);
+    background-color: transparent;
+    gap: 40px;
+}
+
+#btn-recomecar {
+    display: flex;
+    background-color: black;
+    height: 25%;
+    width: 45%;
+}
+
+.btn-recomecar {
+    background-color: white;
+    flex-grow: 1;
+    border: 2px solid black;
+    transform: translateX(-5px) translateY(-5px);
 }
 
 #tela-pontuação{
@@ -271,7 +311,7 @@ main ul {
  }
  
 table {
-margin: 1px;
+    margin: 1px;
 }
 
 td {

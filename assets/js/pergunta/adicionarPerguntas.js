@@ -30,24 +30,27 @@ function reiniciarQuiz() {
     let rodadas = document.querySelectorAll('pergunta');
     let alternativas = document.querySelectorAll('.pergunta ul li button');
 
-    // Oculta todas as perguntas
-    rodadas.forEach(function(rodada) {
-        rodada.classList.add('ocultar');
-    });
+    setTimeout(() => {
 
-    // Redefine o estilo de fundo das alternativas
-    alternativas.forEach(function(alternativa) {
-        alternativa.style.backgroundColor = 'gray';
-    });
+        // Oculta todas as perguntas
+        rodadas.forEach(function(rodada) {
+            rodada.classList.add('ocultar');
+        });
 
-    // Oculta a tela de reinício e exibe a primeira pergunta
-    document.getElementById('reiniciar-jogo').classList.add('ocultar');
-    document.getElementById('pergunta-1').style.display = 'flex';
+        // Redefine o estilo de fundo das alternativas
+        alternativas.forEach(function(alternativa) {
+            alternativa.style.backgroundColor = 'white';
+        });
 
-    // Inicia o sequenciamento das perguntas
-    sequenciadorPerguntas();
+        // Oculta a tela de reinício e exibe a primeira pergunta
+        document.getElementById('reiniciar-jogo').classList.add('ocultar');
+        document.getElementById('pergunta-1').style.display = 'flex';
 
-    zerarPontuacao();
+        // Inicia o sequenciamento das perguntas
+        sequenciadorPerguntas();
+
+        zerarPontuacao();
+    },1000);
 }
 
 /**
