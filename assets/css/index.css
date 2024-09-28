@@ -1,3 +1,6 @@
+/*Fontes*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -60,7 +63,6 @@ main {
 .sections {
     position: relative;
     flex-direction: column;
-    background-color: blue;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -111,7 +113,6 @@ main {
     position: relative;
     height: 100%;
     width: 100%;
-    background-color: navy;
 }
 
 .titulo-pergunta {
@@ -135,13 +136,46 @@ main {
     display: flex;
 }
 
-main ul {
+main ol {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 650px;
     height: 40vh;
-    justify-content: space-evenly;
+    background-color: #FFE2BB;
+    margin-top: 1rem;
+    font-size: 17px;
+    gap: 1rem;
+    font-weight: 400;
+    font-family: "Inter", system-ui;
+    border-radius: 20px;
+    border: #FF9100 solid 6px;
+}
+
+#regras h1 {
+    font-family: "Inter", system-ui;;
+}
+
+#regras a {
+    text-decoration: none;
+    color: #FF9100;
+    font-size: 20px;
+    font-family: "Inter", system-ui;
+}
+
+.btn-iniciar-quiz {
+    margin-top: 30px;
+    height: 70px;
+    width: 200px;
+    font-size: 20px;
+    color: #00712D;
+    background-color: #D5ED9F;
+    border: #00712D solid 3px;
+    border-radius: 20px;
+    cursor:pointer;
+    font-family: "Inter", system-ui;
+    font-weight: bold;
 }
 
 .resposta {
