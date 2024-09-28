@@ -23,7 +23,7 @@
         <script type="module" src="assets/js/contagemPontuacao/calcularPontuacao.js"></script>
         <script type="module" src="assets/js/pergunta/adicionarPerguntas.js" defer></script>
         <script type="module" src="assets/js/transicao/respostaErrada.js"></script>
-        <script src="assets/js/transicao/mudarSection.js" defer></script>
+        <script  src="assets/js/transicao/mudarSection.js" defer></script>
     </head>
     <body>
         
@@ -34,12 +34,14 @@
                     <img src="assets/imgs/logo-preta.svg" alt="logo na cor preta">
                 </div>
                 <div class="btn-comecar">
-                    <button onclick="mostrarSection('regras')">Start</button>
+                    <button class="btn-comum" onclick="mostrarSection('regras')">Start</button>
                 </div>
-                
             </div>
         </section>
         <header>
+            <div id="logo-header">
+                <img src="assets/imgs/logo-preta.svg" alt="logo na cor preta">
+            </div>
             <nav>
                 <ul id="lista-nav">
                     <li onclick="mostrarSection('regras')"><a href="#">Regras</a></li>
@@ -51,13 +53,20 @@
             <!--Tela de regras-->
             <section id="regras" class="sections ocultar">
                 <h1>
-                    Painel de regras
-                    <div id="btn-iniciar-quiz">
-                        <button class="btn-iniciar-quiz" onclick="mostrarSection('quiz')">
-                            começar
-                        </button>
-                    </div>
+                    Regras do quiz
                 </h1>
+                <ul id="regras-quiz">
+                    <li>O quiz é composto por 10 fases. Em cada fase, uma pergunta;</li>
+                    <li>Cada pergunta com 4 alternativas, onde apenas 1 é a correta;</li>
+                    <li>Quando você acerta, você passa de fase;</li>
+                    <li>Mas se você erra, você volta para a primeira fase;</li>
+                    <li>Você poderá checar sua pontuação após completar as 10 fases.</li>
+                </ul>
+                <div id="btn-iniciar-quiz">
+                    <button class="btn-iniciar-quiz btn-comum" onclick="mostrarSection('quiz')">
+                        começar
+                    </button>
+                </div>
             </section>
             <!--Quiz-->
             <section id="quiz" class="sections ocultar">
@@ -194,9 +203,4 @@
             </section>
         </main>
     </body>
-    <footer>
-        <div class="logo">
-            <img src="assets/imgs/logo-branca.svg" alt="logo na cor branca">
-        </div>
-    </footer>
 </html>
