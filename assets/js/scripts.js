@@ -21,6 +21,8 @@
  */
 let botoes = document.querySelectorAll('.btn-comum');
 
+const audio = document.getElementById('botao-clicando');
+
 botoes.forEach(botao => {
     botao.addEventListener('click', function(event) {
 
@@ -28,10 +30,12 @@ botoes.forEach(botao => {
 
         // Volta o botão para a posição original
         botaoSelecionado.style.transform = 'translateX(0px) translateY(0px)';
+
+        audio.play();
         
         // Após 200 milissegundos, move o botão para uma nova posição
         setTimeout(() => {
             botaoSelecionado.style.transform = 'translateX(-5px) translateY(-5px)';
-        }, 200);
+        }, 100);
     });
 });
