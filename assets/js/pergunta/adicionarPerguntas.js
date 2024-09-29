@@ -1,7 +1,8 @@
 import {perguntas} from "./perguntas.js";
 import respostaErrada from "../transicao/respostaErrada.js";
 import { intervalo, decairPontos, pontos } from "../contagemPontuacao/cronometro.js";
-import { pontuacaoRodada, zerarPontuacao, somarPontuacaoTotal } from "../contagemPontuacao/calcularPontuacao.js";
+import { pontuacaoRodada, zerarPontuacao } from "../contagemPontuacao/calcularPontuacao.js";
+import exibirPontuacao from "../transicao/exibirPontuacao.js";
 
 /**
  * Esta função configura os botões de reiniciar e iniciar o quiz, além de gerenciar o
@@ -161,11 +162,6 @@ function passarPergunta() {
         document.getElementById(`pergunta-${perguntaAtual}`).style.display = 'flex';
         sequenciadorPerguntas();
     } else {
-        // Exibe uma mensagem de finalização e reinicia o quiz
-        let pontuacaoTotal = somarPontuacaoTotal();
-        console.log('pontuação total: ', pontuacaoTotal.toFixed(2));
-        alert('Fim do quiz! Clique para reiniciar.');
-        reiniciarQuiz();
-        zerarPontuacao();
+        exibirPontuacao();
     }
 }

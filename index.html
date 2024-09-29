@@ -23,7 +23,7 @@
         <script type="module" src="assets/js/contagemPontuacao/calcularPontuacao.js"></script>
         <script type="module" src="assets/js/pergunta/adicionarPerguntas.js" defer></script>
         <script type="module" src="assets/js/transicao/respostaErrada.js"></script>
-        <script  src="assets/js/transicao/mudarSection.js" defer></script>
+        <script src="assets/js/transicao/mudarSection.js" defer></script>
     </head>
     <body>
         <audio src="assets/audio/som-clique-mouse.mp3" type="audio/mpeg" id="botao-clicando"></audio>
@@ -193,37 +193,9 @@
                     </ul>
                 </section>         
             </section>
-            <section id="placar" class="sections ocultar ">
-                <section id="tela-pontuação">
-                    <div id="pontuação-geral">
-                        <h2 class="pontuação"> Sua pontuação foi 1228</h2>
-                    </div>
-                    <table>
-                        <tr class="nome-pontuação">
-                            <th class="colocação"></th>
-                            <th class="nome-usuario">Nome </th>
-                            <th class="pontuação-usuario">Pontuação</th>
-                        </tr>
-                        <tr class="colocado-1">
-                            <td class="colocação">1°</td>
-                            <td class="nome-usuario">flor</td>
-                            <td class="pontuação-usuario"> 2839</td>
-                        </tr>
-                        <tr class="colocado-2">
-                            <td class="colocação">2°</td>
-                            <td class="nome-usuario">jure</td>
-                            <td class="pontuação-usuario"> 2739</td>
-                        </tr>
-                        <tr class="colocado-3">
-                            <td class="colocação">3°</td>
-                            <td class="nome-usuario">Gue</td>
-                            <td class="pontuação-usuario"> 2639</td>
-                        </tr>
-        
-                    </table>
-        
-                </section>
-             
+            <section id="pontuacao" class="sections ocultar">
+                <h1>Parabéns</h1>
+                <p>sua pontuação foi <span id="pontuacao-total"></span></p>
             </section>
         </main>
     </body>
