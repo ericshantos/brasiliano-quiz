@@ -167,6 +167,12 @@ main {
     font-weight: 400;
 }
 
+.conteudo-regras {
+    background-color: transparent;
+    padding: 10px;
+    margin-left: 5%;
+}
+
 #regras h1 {
     position: relative;
     font-size: xx-large;
@@ -251,6 +257,10 @@ main ul {
 
 .alternativa:hover {
     transform: translateX(-5px) translateY(-5px);
+}
+
+.alternativa:active {
+    transform: translateX(0px) translateY(0px);
 }
 
 #pergunta-1 {
