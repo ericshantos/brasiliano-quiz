@@ -175,12 +175,16 @@ main {
     background-color: transparent;
     font-size: larger;
     font-weight: 400;
+    gap: 10px;
 }
 
 .conteudo-regras {
+    display: flex;
+    flex-direction: column;
     background-color: transparent;
     padding: 10px;
     margin-left: 5%;
+    gap: 20px;
 }
 
 #regras h1 {
