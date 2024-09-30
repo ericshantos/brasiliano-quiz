@@ -10,6 +10,8 @@ O tema escolhido foi cultura e produções brasileiras, sobre o viés de combate
 
 Com esse trabalho, buscamos trabalhar de forma prática os conceitos e habilidade adquiridos em aula, e expor a diversidade cultura da nossa nação.
 
+> Nota: o quiz não possui responsividade, logo, recomenda-se que o acesse por um computador.
+
 >## Desenvolvedores
 
 - Líder: [Eric](https://github.com/ericshantos)
