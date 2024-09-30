@@ -246,20 +246,22 @@ main ul {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 650px;
-    height: 40vh;
+    width: 100%;
+    height: 60%;
     justify-content: space-evenly;
 }
 
 .resposta {
+    display: flex;
     list-style: none;
     background-color: black;
+    width: 75%;
+    height: 17%;
 }
 
 .resposta .alternativa {
     background-color: white;
-    width: 500px;
-    height: 6vh;
+    flex-grow: 1;
     cursor: pointer;
     border: 2px solid black;
     transition: transform 0.1s ease;

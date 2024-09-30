@@ -19,9 +19,6 @@ function mostrarSection(id) {
             secao.classList.remove('mostrar');
         });
 
-        // Exibe no console a mensagem de teste para indicar que a função está funcionando
-        console.log('ta funcionando');
-
         // Seleciona a seção pelo ID e adiciona a classe 'mostrar' para exibi-la
         let mostrarSecao = document.getElementById(id);
         mostrarSecao.classList.add('mostrar');

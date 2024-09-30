@@ -3,7 +3,7 @@ import respostaErrada from "../transicao/respostaErrada.js";
 import { intervalo, decairPontos, pontos } from "../contagemPontuacao/cronometro.js";
 import { pontuacaoRodada, zerarPontuacao } from "../contagemPontuacao/calcularPontuacao.js";
 import exibirPontuacao from "../transicao/exibirPontuacao.js";
-import { listaPerguntas, perguntaSorteadas, perguntaRepetida, zerarPerguntas } from "../transicao/perguntasPassadas.js";
+import { perguntaSorteadas, perguntaRepetida, zerarPerguntas } from "../transicao/perguntasPassadas.js";
 
 /**
  * Esta função configura os botões de reiniciar e iniciar o quiz, além de gerenciar o
