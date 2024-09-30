@@ -12,7 +12,6 @@ let pontuacao = [];
  */
 export function pontuacaoRodada(ponto) {
     pontuacao.push(ponto);
-    console.log(pontuacao);
 }
 
 /**

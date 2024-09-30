@@ -1,7 +1,9 @@
 import {perguntas} from "./perguntas.js";
 import respostaErrada from "../transicao/respostaErrada.js";
 import { intervalo, decairPontos, pontos } from "../contagemPontuacao/cronometro.js";
-import { pontuacaoRodada, zerarPontuacao, somarPontuacaoTotal } from "../contagemPontuacao/calcularPontuacao.js";
+import { pontuacaoRodada, zerarPontuacao } from "../contagemPontuacao/calcularPontuacao.js";
+import exibirPontuacao from "../transicao/exibirPontuacao.js";
+import { perguntaSorteadas, perguntaRepetida, zerarPerguntas } from "../transicao/perguntasPassadas.js";
 
 /**
  * Esta função configura os botões de reiniciar e iniciar o quiz, além de gerenciar o
@@ -30,24 +32,29 @@ function reiniciarQuiz() {
     let rodadas = document.querySelectorAll('pergunta');
     let alternativas = document.querySelectorAll('.pergunta ul li button');
 
-    // Oculta todas as perguntas
-    rodadas.forEach(function(rodada) {
-        rodada.classList.add('ocultar');
-    });
+    setTimeout(() => {
 
-    // Redefine o estilo de fundo das alternativas
-    alternativas.forEach(function(alternativa) {
-        alternativa.style.backgroundColor = 'gray';
-    });
+        // Oculta todas as perguntas
+        rodadas.forEach(function(rodada) {
+            rodada.classList.add('ocultar');
+        });
 
-    // Oculta a tela de reinício e exibe a primeira pergunta
-    document.getElementById('reiniciar-jogo').classList.add('ocultar');
-    document.getElementById('pergunta-1').style.display = 'flex';
+        // Redefine o estilo de fundo das alternativas
+        alternativas.forEach(function(alternativa) {
+            alternativa.style.backgroundColor = 'white';
+        });
 
-    // Inicia o sequenciamento das perguntas
-    sequenciadorPerguntas();
+        // Oculta a tela de reinício e exibe a primeira pergunta
+        document.getElementById('reiniciar-jogo').classList.add('ocultar');
+        document.getElementById('pergunta-1').style.display = 'flex';
 
-    zerarPontuacao();
+        // Inicia o sequenciamento das perguntas
+        sequenciadorPerguntas();
+
+        zerarPontuacao();
+
+        zerarPerguntas();
+    },1000);
 }
 
 /**
@@ -56,15 +63,23 @@ function reiniciarQuiz() {
  */
 function sequenciadorPerguntas() {
 
-    decairPontos(); // Chama uma função externa para manipular os pontos (não definida aqui)
+    let perguntaSorteada;
+    let idPergunta;
 
-    let objPergunta = document.getElementById(`pergunta-${perguntaAtual}`);
-
-    // Verifica se a pergunta existe, caso contrário, exibe erro
-    if (!objPergunta) {
-        console.error(`Elemento com o ID pergunta-${perguntaAtual} não encontrado`);
-        return;
-    }
+    do {
+        // Sorteia uma pergunta aleatória da lista de perguntas
+        perguntaSorteada = perguntas[Math.floor(Math.random() * perguntas.length)];
+    
+        idPergunta = perguntaSorteada.id;
+        
+        // Verifica se a pergunta já foi sorteada antes de adicioná-la ao histórico
+        if (!perguntaRepetida(idPergunta)) {
+            perguntaSorteadas(idPergunta); // Adiciona ao histórico apenas se não for repetida
+            break;
+        }
+    
+    } while (true); // Continua até encontrar uma pergunta não repetida
+    
 
     // Seleciona os elementos da pergunta atual (enunciado e alternativas)
     let enunciado = document.querySelector(`#pergunta-${perguntaAtual} .titulo-pergunta`);
@@ -72,9 +87,6 @@ function sequenciadorPerguntas() {
     let alternativaB = document.querySelector(`#pergunta-${perguntaAtual} .alternativa-b`);
     let alternativaC = document.querySelector(`#pergunta-${perguntaAtual} .alternativa-c`);
     let alternativaD = document.querySelector(`#pergunta-${perguntaAtual} .alternativa-d`);
-
-    // Sorteia uma pergunta aleatória da lista de perguntas
-    let perguntaSorteada = perguntas[Math.floor(Math.random() * perguntas.length)];
 
     // Desestrutura a resposta correta e as alternativas incorretas da pergunta sorteada
     let [respostaCorreta, [respostaB, respostaC, respostaD]] = perguntaSorteada.resposta;
@@ -104,6 +116,8 @@ function sequenciadorPerguntas() {
 
     // Define o texto do enunciado da pergunta
     enunciado.textContent = perguntaSorteada.enunciado;
+
+    decairPontos(); // Chama uma função externa para manipular os pontos
 
     /**
      * Função que verifica se a alternativa clicada é a correta.
@@ -158,11 +172,6 @@ function passarPergunta() {
         document.getElementById(`pergunta-${perguntaAtual}`).style.display = 'flex';
         sequenciadorPerguntas();
     } else {
-        // Exibe uma mensagem de finalização e reinicia o quiz
-        let pontuacaoTotal = somarPontuacaoTotal();
-        console.log('pontuação total: ', pontuacaoTotal.toFixed(2));
-        alert('Fim do quiz! Clique para reiniciar.');
-        reiniciarQuiz();
-        zerarPontuacao();
+        exibirPontuacao();
     }
 }
