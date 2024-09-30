@@ -1,3 +1,20 @@
+/**
+ * Banco de dados de perguntas sobre cinema e séries brasileiras.
+ * Cada pergunta é representada como um objeto com as seguintes propriedades:
+ * 
+ * @property {string} id - Identificador único da pergunta.
+ * @property {string} enunciado - Enunciado da pergunta.
+ * @property {Array} resposta - Contém a resposta correta e as respostas incorretas.
+ *   - O primeiro elemento é a resposta correta.
+ *   - O segundo elemento é uma lista de respostas incorretas.
+ * 
+ * Exemplo de estrutura de uma pergunta:
+ * {
+ *   "id": "1",
+ *   "enunciado": "Qual foi a primeira série brasileira original da Netflix?",
+ *   "resposta": ["3%", ['Sintonia', 'Coisa Mais Linda', 'O Mecanismo']]
+ * }
+ */
 export const perguntas = [
     {
         "id": "1",

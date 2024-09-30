@@ -1,4 +1,4 @@
-import {perguntas} from "./perguntas.js";
+import { perguntas } from "./perguntas.js";
 import respostaErrada from "../transicao/respostaErrada.js";
 import { intervalo, decairPontos, pontos } from "../contagemPontuacao/cronometro.js";
 import { pontuacaoRodada, zerarPontuacao } from "../contagemPontuacao/calcularPontuacao.js";
@@ -6,9 +6,10 @@ import exibirPontuacao from "../transicao/exibirPontuacao.js";
 import { perguntaSorteadas, perguntaRepetida, zerarPerguntas } from "../transicao/perguntasPassadas.js";
 
 /**
- * Esta função configura os botões de reiniciar e iniciar o quiz, além de gerenciar o
- * fluxo das perguntas e a lógica de respostas corretas e incorretas. Ela embaralha
- * as respostas e exibe as perguntas de forma aleatória.
+ * Este script gerencia a lógica do quiz, incluindo a configuração dos botões
+ * de reiniciar e iniciar, o fluxo das perguntas, a lógica de respostas e
+ * a pontuação. As perguntas são exibidas de forma aleatória e as respostas
+ * são embaralhadas antes de serem apresentadas ao usuário.
  */
 
 // Define o botão de reiniciar o quiz, vinculado à função reiniciarQuiz
@@ -23,7 +24,7 @@ let perguntaAtual = 1; // Controla o índice da pergunta atual
  * Função para reiniciar o quiz.
  * - Reseta o contador de perguntas.
  * - Oculta todas as perguntas e redefine o estilo das alternativas.
- * - Exibe a primeira pergunta e chama a função sequenciadorPerguntas.
+ * - Exibe a primeira pergunta e inicia o sequenciamento das perguntas.
  */
 function reiniciarQuiz() {
     perguntaAtual = 1; // Reinicia a contagem das perguntas
@@ -33,7 +34,6 @@ function reiniciarQuiz() {
     let alternativas = document.querySelectorAll('.pergunta ul li button');
 
     setTimeout(() => {
-
         // Oculta todas as perguntas
         rodadas.forEach(function(rodada) {
             rodada.classList.add('ocultar');
@@ -51,10 +51,9 @@ function reiniciarQuiz() {
         // Inicia o sequenciamento das perguntas
         sequenciadorPerguntas();
 
-        zerarPontuacao();
-
-        zerarPerguntas();
-    },1000);
+        zerarPontuacao(); // Reseta a pontuação
+        zerarPerguntas(); // Reseta o histórico de perguntas
+    }, 1000);
 }
 
 /**
@@ -62,7 +61,6 @@ function reiniciarQuiz() {
  * configurar a lógica de verificação das respostas.
  */
 function sequenciadorPerguntas() {
-
     let perguntaSorteada;
     let idPergunta;
 
@@ -80,7 +78,6 @@ function sequenciadorPerguntas() {
     
     } while (true); // Continua até encontrar uma pergunta não repetida
     
-
     // Seleciona os elementos da pergunta atual (enunciado e alternativas)
     let enunciado = document.querySelector(`#pergunta-${perguntaAtual} .titulo-pergunta`);
     let alternativaA = document.querySelector(`#pergunta-${perguntaAtual} .alternativa-a`);
@@ -158,7 +155,6 @@ function sequenciadorPerguntas() {
  * Função que avança para a próxima pergunta ou reinicia o quiz se todas as perguntas forem respondidas.
  */
 function passarPergunta() {
-
     // Oculta a pergunta atual
     document.getElementById('reiniciar-jogo').classList.add('ocultar');
     document.getElementById(`pergunta-${perguntaAtual}`).classList.add('ocultar');
@@ -172,6 +168,6 @@ function passarPergunta() {
         document.getElementById(`pergunta-${perguntaAtual}`).style.display = 'flex';
         sequenciadorPerguntas();
     } else {
-        exibirPontuacao();
+        exibirPontuacao(); // Exibe a pontuação final se todas as perguntas forem respondidas
     }
 }

@@ -4,14 +4,15 @@
 
 <h1 align="center">Projeto [M1] - Quiz</h1>
 
-<p align="center">🚧 Projeto em construção 🚧</p>
+O quiz Brasiliano é o projeto final do módulo 1 do Squad 6, da Turma Otis.
 
-## Desenvolvedores
+O tema escolhido foi cultura e produções brasileiras, sobre o viés de combater a sindrome do vira-lata - ideia de que tudo atrelado ao Brasil é ruim.
 
-- Líder: Eric
-- desenvolvedor(a): [Andrei]()
+Com esse trabalho, buscamos trabalhar de forma prática os conceitos e habilidade adquiridos em aula, e expor a diversidade cultura da nossa nação.
+
+>## Desenvolvedores
+
+- Líder: [Eric](https://github.com/ericshantos)
+- desenvolvedor(a): [Andrei](https://github.com/AndreiMoreira7)
 - desenvolvedor(a): [Jhulyanne](https://github.com/jhulyanne)
-- desenvolvedor(a): [Matheus]()
-- desenvolvedor(a): [Mickael]()
-
-- [Figma](https://www.figma.com/design/5cDCS3Zo4FwTGepbFFiro3/Untitled?node-id=0-1&node-type=canvas&t=VVrsnNxBXZGOw43X-0)
+- desenvolvedor(a): [Matheus](https://github.com/matheusdesaaguiar)
