@@ -1,4 +1,5 @@
 import { somarPontuacaoTotal } from "../contagemPontuacao/calcularPontuacao.js";
+import { listaPerguntas } from "./perguntasPassadas.js";
 
 export default function exibirPontuacao() {
 

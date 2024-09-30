@@ -26,7 +26,6 @@ export function decairPontos() {
     intervalo = setInterval(function() {
         if (pontos >= 0) {
             pontos -= 0.05;
-            console.log(pontos.toFixed(2));
         } else {
             clearInterval(intervalo);
         }
