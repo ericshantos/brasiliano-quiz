@@ -18,6 +18,14 @@ document.getElementById('btn-recomecar').addEventListener('click', reiniciarQuiz
 // Define o botão de iniciar o quiz, vinculado à função sequenciadorPerguntas
 document.getElementById('btn-iniciar-quiz').addEventListener('click', sequenciadorPerguntas);
 
+let nomeJogador;
+
+// Caputura o nome do usuário
+document.addEventListener('DOMContentLoaded', () => {
+    nomeJogador = prompt("Qual é o seu nome?");
+    document.getElementById('nome-usuario').textContent = nomeJogador;
+});
+
 let perguntaAtual = 1; // Controla o índice da pergunta atual
 
 /**
